@@ -1,10 +1,26 @@
 .hero {
   padding: 5.6vw;
   min-height: 80vh;
-  background-image: ;
+  background-image: url(../images/harry-potter-aniversario.webp);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: 80% center;
 }
+
 .hero__content {
   max-width: 640px;
+}
+
+.hero__content img {
+  margin-bottom: 24px;
+}
+
+.hero h3 {
+  color: white;
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 * {
@@ -54,4 +70,77 @@ body {
   line-height: 30px;
   color: #333;
   color: #666;
+}
+
+.header img {  
+  width: 120px;
+  height: auto;
+}
+
+
+header .botoes{
+    display: flex;
+    gap: 16px;
+    text-decoration: none;
+    justify-content: flex-end;
+    padding: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    border-radius: 4px; 
+}
+
+
+
+.botoes a {
+    text-decoration: none;
+    color: #f5ecec;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: large;
+    background-color: #8d8d94;
+
+}
+
+.botoes a:hover { 
+  background-color: #49494d;
+  cursor: pointer;
+}
+.hero__content h3 {
+    color: white;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px 20px;
+    text-shadow: 2px 2px 4px #000000;
+}
+.hero__content img {
+    width: 40%;
+    height: auto;
+    margin-bottom: 16px;
+}
+
+.filmes {
+    background-color: #f0f0f0;
+    padding: 16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.filmes__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 32px;
+
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: right;
+    padding: 16px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    opacity: 0.5;
 }
