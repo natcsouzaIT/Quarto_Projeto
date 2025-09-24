@@ -19,7 +19,7 @@ function html() {
     .pipe(gulp.dest('./dist'));
 }
 
-exports.default = gulp.parallel(styles, images);
+exports.default = gulp.parallel(styles, images, html);
 
 exports.watch = function() {
     gulp.watch('src/styles/*.scss', gulp.parallel(styles));
