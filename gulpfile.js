@@ -14,9 +14,15 @@ function images() {
     .pipe(gulp.dest('./dist/images'));
 }
 
+function html() {
+  return gulp.src('src/*.html')
+    .pipe(gulp.dest('./dist'));
+}
+
 exports.default = gulp.parallel(styles, images);
 
 exports.watch = function() {
     gulp.watch('src/styles/*.scss', gulp.parallel(styles));
+    gulp.watch('src/*.html', gulp.parallel(html));
 }
 
