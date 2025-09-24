@@ -1,28 +1,50 @@
 .hero {
   padding: 5.6vw;
   min-height: 80vh;
-  background-image: url(../images/harry-potter-aniversario.webp);
-  background-size: 100% auto;
+  background-image: url("../images/harry-potter-aniversario.webp");
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: 80% center;
+  background-position: center right;
 }
 
 .hero__content {
   max-width: 640px;
 }
-
 .hero__content img {
-  margin-bottom: 24px;
+  width: 40%;
+  height: auto;
+  margin-bottom: 16px;
 }
-
-.hero h3 {
+.hero__content h3 {
   color: white;
-  font-size: 32px;
-  line-height: 40px;
-  font-weight: bold;
+  font-size: larger;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 20px;
   text-shadow: 2px 2px 4px #000000;
 }
 
+@media (max-width: 600px) {
+  .hero {
+    background-position: right center;
+    padding: 8vw;
+  }
+  .hero__content {
+    max-width: 100%;
+    margin-top: 10vh;
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+  }
+  .hero__content img {
+    width: 60%;
+    margin-bottom: 12px;
+  }
+  .hero__content h3 {
+    font-size: 18px;
+    line-height: 26px;
+    margin: 12px;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -72,75 +94,71 @@ body {
   color: #666;
 }
 
-.header img {  
+.header img {
   width: 120px;
   height: auto;
 }
 
-
-header .botoes{
-    display: flex;
-    gap: 16px;
-    text-decoration: none;
-    justify-content: flex-end;
-    padding: 16px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    border-radius: 4px; 
+.botoes {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  padding: 16px;
+  font-family: Arial, Helvetica, sans-serif;
 }
-
-
-
 .botoes a {
-    text-decoration: none;
-    color: #f5ecec;
-    font-weight: bold;
-    padding: 8px 16px;
-    border-radius: 4px;
-    font-size: large;
-    background-color: #8d8d94;
-
+  text-decoration: none;
+  color: #d4cdcd;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: large;
+  background-color: #b1b1c7;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-
-.botoes a:hover { 
-  background-color: #49494d;
+.botoes a:hover {
+  background-color: #686870;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   cursor: pointer;
-}
-.hero__content h3 {
-    color: white;
-    font-size: larger;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 20px 20px;
-    text-shadow: 2px 2px 4px #000000;
-}
-.hero__content img {
-    width: 40%;
-    height: auto;
-    margin-bottom: 16px;
 }
 
 .filmes {
-    background-color: #f0f0f0;
-    padding: 16px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding: 40px 5vw;
+  background-color: #f8f8f8;
+  text-align: center;
 }
-
+.filmes h2 {
+  margin-bottom: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+}
 .filmes__grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    margin: 32px;
-
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+.filmes .filme img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+.filmes .filme p {
+  margin-top: 8px;
+  font-weight: bold;
+  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .footer {
-    background-color: #333;
-    color: white;
-    text-align: right;
-    padding: 16px 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    opacity: 0.5;
+  background-color: #333;
+  color: white;
+  text-align: right;
+  padding: 16px 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  opacity: 0.5;
 }

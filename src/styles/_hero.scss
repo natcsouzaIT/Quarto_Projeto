@@ -1,10 +1,69 @@
-.hero {
-    padding: 5.6vw;
-    min-height: 80vh;
-    background-image: url(src/images/harry-potter-aniversario.webp);
-    background-size: contain;
-    
-    &__content {
-        max-width: 640px;
-    }
+$corTexto: #333;
+$corTextoSecundario: #666;
+
+@mixin text($fontSize: 16px) {
+  font-size: $fontSize;
+  line-height: $fontSize + 10px;
+  color: $corTexto;
 }
+
+@mixin title($fontSize: 40px) {
+  @include text($fontSize);
+  color: $corTextoSecundario;
+}
+
+.hero {
+  padding: 5.6vw;
+  min-height: 80vh;
+  background-image: url('../images/harry-potter-aniversario.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+.hero__content {
+  max-width: 640px;
+
+  img {
+    width: 40%;
+    height: auto;
+    margin-bottom: 16px;
+  }
+
+  h3 {
+    color: white;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+    text-shadow: 2px 2px 4px #000000;
+  }
+}
+
+@mixin responsive-hero($breakpoint: 600px, $bgPosition: right center, $imgWidth: 60%) {
+  @media (max-width: $breakpoint) {
+    .hero {
+      background-position: $bgPosition;
+      padding: 8vw;
+    }
+
+    .hero__content {
+      max-width: 100%;
+      margin-top: 10vh;
+      padding: 16px;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 8px;
+    }
+
+    .hero__content img {
+      width: $imgWidth;
+      margin-bottom: 12px;
+    }
+
+    .hero__content h3 {
+      font-size: 18px;
+      line-height: 26px;
+      margin: 12px;
+    }
+  }
+}
+@include responsive-hero();

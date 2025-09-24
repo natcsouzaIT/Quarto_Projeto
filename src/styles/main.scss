@@ -1,56 +1,118 @@
-@use 'hero'; 
+@use 'hero';
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 $corDeFundo: #f0f0f0;
 $corTexto: #333;
 $corTextoSecundario: #666;
+$corBotao: #b1b1c7;
+$corBotaoHover: #686870;
+$corBotaoTexto: #d4cdcd;
 
 body {
-    background-color: $corDeFundo;
-}
-
-@mixin text($fontSize: 16px) {
-    font-size: $fontSize;
-    line-height: $fontSize + 10px;
-    color: $corTexto;
-}
-
-@mixin title ($fontSize: 40px) {
-    @include text($fontSize);
-    color: $corTextoSecundario;
+  background-color: $corDeFundo;
 }
 
 .text--big {
-    @include text(20px);
+  @include hero.text(20px);
 }
 
 .text {
-    @include text;
+  @include hero.text;
 }
 
 .text--small {
-    @include text (12px);
+  @include hero.text(12px);
 }
 
 .title--big {
-    @include title;
+  @include hero.title;
 }
 
 .title {
-    @include title(30px);
+  @include hero.title(30px);
 }
 
 .title--small {
-    @include title(20px);
+  @include hero.title(20px);
+}
+
+.header img {
+  width: 120px;
+  height: auto;
 }
 
 .botoes {
-    display: flex;
-    gap: 16px;
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  padding: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+
+  a {
     text-decoration: none;
-    background-color: red;
+    color: $corBotaoTexto;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: large;
+    background-color: $corBotao;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      background-color: $corBotaoHover;
+      color: white;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+    }
+  }
+}
+.filmes {
+  padding: 40px 5vw;
+  background-color: #f8f8f8;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+  }
+
+  .filme {
+    img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    p {
+      margin-top: 8px;
+      font-weight: bold;
+      color: #333;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  }
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: right;
+  padding: 16px 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  opacity: 0.5;
 }
